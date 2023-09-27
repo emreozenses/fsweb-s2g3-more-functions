@@ -43,9 +43,17 @@ dosyaAdiniBul("C:/Users/johnsmith/Music/Beethoven_5.mp3");
   örnek output: 104
 */
 
-function ortalamaBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamaBul(arr) {
+  let outArr = [...arr];
+  console.log(outArr);
+  const totalNum = outArr.reduce((total, num) => {
+    return total + num;
+  }, 0);
+  console.log(totalNum);
+  const avg = totalNum / outArr.length;
+  return avg;
 }
+console.log(ortalamaBul([15, 25, 95, 200, 45]));
 
 /*
   GÖREV 3
