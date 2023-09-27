@@ -45,15 +45,16 @@ dosyaAdiniBul("C:/Users/johnsmith/Music/Beethoven_5.mp3");
 
 function ortalamaBul(arr) {
   let outArr = [...arr];
-  console.log(outArr);
   const totalNum = outArr.reduce((total, num) => {
     return total + num;
   }, 0);
-  console.log(totalNum);
   const avg = totalNum / outArr.length;
+  if (isNaN(avg)) {
+    return null;
+  }
   return avg;
 }
-console.log(ortalamaBul([15, 25, 95, 200, 45]));
+console.log(ortalamaBul([45]));
 
 /*
   GÖREV 3
@@ -75,9 +76,21 @@ console.log(ortalamaBul([15, 25, 95, 200, 45]));
   örnek output: [109, 216, 288, 143, 185, 194]
 */
 
-function ortalamadanBuyukleriBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamadanBuyukleriBul(arr, ortalamaBul) {
+  const newArr = [...arr];
+  if (newArr.length == 0) {
+    return null;
+  }
+  const avgNum = ortalamaBul(newArr);
+  console.log(avgNum);
+
+  const result = newArr.filter((num) => {
+    return num >= avgNum;
+  });
+  console.log(result);
+  return result;
 }
+ortalamadanBuyukleriBul([], ortalamaBul);
 
 /* !!!! Burdan aşağısını değiştirmeyin !!!! */
 function as() {
