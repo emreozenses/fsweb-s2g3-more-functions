@@ -16,10 +16,15 @@
   örnek output: ""
 */
 
-function dosyaAdiniBul(/* kodlar buraya */) {
-  // kodlar buraya
-}
+function dosyaAdiniBul(adress) {
+  let str = "";
+  str = adress;
+  const indexStr = str.lastIndexOf("/") + 1;
 
+  console.log(str.slice(indexStr, str.length));
+  return str.slice(indexStr, str.length);
+}
+dosyaAdiniBul("C:/Users/johnsmith/Music/Beethoven_5.mp3");
 /*
   GÖREV 2
   - Input:  Bir sayı arrayini parametre olarak alacak bir fonksiyon oluştur.
